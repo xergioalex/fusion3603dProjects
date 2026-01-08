@@ -171,4 +171,211 @@ Sheet Metal workspace is specifically designed for creating parts that will be m
 5. **Combine workspaces** - you can use Surface tools to create complex shapes, then convert to Solid
 6. **Design Timeline** - All operations are recorded and can be edited in the timeline at the bottom
 
+---
+
+## 📁 Fusion 360 Project Structure
+
+Fusion 360 uses a cloud-based project management system to organize all your work. Understanding the hierarchical structure helps keep your designs organized and accessible.
+
+### 🗂️ Project Hierarchy
+
+```
+📦 PROJECT
+├── 📐 Designs (.f3d)
+├── 📄 Documents (.pdf, .docx, .txt, etc.)
+├── 🖼️ Images (.png, .jpg, .svg, etc.)
+└── 📁 Folders
+    ├── 📐 Designs
+    ├── 📄 Documents
+    ├── 🖼️ Images
+    └── 📁 Subfolders
+        ├── 📐 Designs
+        ├── 📄 Documents
+        ├── 🖼️ Images
+        └── 📁 More Subfolders...
+            └── (continues recursively)
+```
+
+---
+
+### 📦 Projects
+
+**What is a Project?**
+A project is the top-level container in Fusion 360 that holds all related files for a specific work effort, product, or client.
+
+**Key Features:**
+- Each project has its own unique URL for sharing
+- Projects can be shared with team members with different permission levels
+- All version history is preserved within the project
+- Projects are stored in the Autodesk cloud (Fusion Team)
+
+**Best Practices:**
+- Create one project per product, client, or major initiative
+- Use descriptive names (e.g., "Robot Arm v2 - 2024" instead of "Project1")
+- Set up folder structure before adding designs
+
+---
+
+### 📐 Designs (.f3d files)
+
+**What are Designs?**
+Designs are the core files containing your 3D models, assemblies, sketches, and all parametric data.
+
+**Design Contents:**
+| Element | Description |
+|---------|-------------|
+| **Components** | Individual parts or sub-assemblies |
+| **Bodies** | Solid, surface, or mesh geometry |
+| **Sketches** | 2D drawings used to create 3D features |
+| **Joints** | Connections defining motion between components |
+| **Parameters** | Variables controlling dimensions |
+| **Timeline** | Complete history of all operations |
+
+**Design States:**
+- **Editable** - Full access to modify (limited to 10 in free version)
+- **Read-only** - Can view and export, but not edit
+- **Archived** - Stored but not actively editable
+
+**Actions Available:**
+- Open, Edit, Rename, Copy, Move
+- Export (STEP, STL, IGES, DXF, F3D, etc.)
+- Share with link or specific users
+- View version history and restore previous versions
+- Insert into other designs as components
+
+---
+
+### 📄 Documents
+
+**What are Documents?**
+Documents are supplementary files that support your designs but aren't 3D models themselves.
+
+**Common Document Types:**
+| Type | Use Case |
+|------|----------|
+| **PDF** | Technical drawings, specifications, manuals |
+| **Word/Text** | Design notes, requirements, instructions |
+| **Excel** | BOM (Bill of Materials), cost calculations |
+| **Drawings** | 2D technical drawings created from designs |
+
+**Why Store Documents in Projects?**
+- Keep all project-related files in one place
+- Share documents with the same team members
+- Maintain version history for documents
+- Access from any device through Fusion Team
+
+---
+
+### 🖼️ Images
+
+**What are Images?**
+Images are visual files that complement your designs.
+
+**Common Image Uses:**
+| Use | Description |
+|-----|-------------|
+| **Reference Images** | Photos or sketches used as modeling references |
+| **Renders** | High-quality visualizations of your designs |
+| **Screenshots** | Quick captures of design states |
+| **Textures** | Images used for appearance/materials |
+| **Inspiration** | Mood boards, concept art, competitor products |
+
+**Supported Formats:**
+- PNG, JPG, JPEG, GIF, BMP, TIFF, SVG
+
+---
+
+### 📁 Folders
+
+**What are Folders?**
+Folders provide organizational structure within projects, allowing you to group related items together.
+
+**Folder Organization Strategies:**
+
+**By Component/Assembly:**
+```
+📦 Robot Project
+├── 📁 Base Assembly
+│   ├── 📐 Base Plate Design
+│   ├── 📐 Motor Mount Design
+│   └── 📄 Base Assembly BOM.xlsx
+├── 📁 Arm Assembly
+│   ├── 📐 Upper Arm Design
+│   ├── 📐 Lower Arm Design
+│   └── 📁 Joints
+│       ├── 📐 Elbow Joint Design
+│       └── 📐 Wrist Joint Design
+└── 📁 Electronics
+    ├── 📐 Controller Housing
+    └── 📄 Wiring Diagram.pdf
+```
+
+**By Phase/Version:**
+```
+📦 Product Development
+├── 📁 01 - Concept
+│   ├── 🖼️ Sketches
+│   └── 📐 Initial Concepts
+├── 📁 02 - Prototype
+│   ├── 📐 Prototype v1
+│   └── 📐 Prototype v2
+├── 📁 03 - Production
+│   ├── 📐 Final Design
+│   └── 📄 Manufacturing Specs.pdf
+└── 📁 04 - Documentation
+    ├── 📄 User Manual.pdf
+    └── 🖼️ Product Photos
+```
+
+**By File Type:**
+```
+📦 Client Project
+├── 📁 Designs
+│   ├── 📐 Part A
+│   ├── 📐 Part B
+│   └── 📐 Main Assembly
+├── 📁 Documents
+│   ├── 📄 Requirements.pdf
+│   └── 📄 Meeting Notes.docx
+├── 📁 Images
+│   ├── 🖼️ Reference Photos
+│   └── 🖼️ Final Renders
+└── 📁 Exports
+    └── 📄 STL Files for Printing
+```
+
+---
+
+### 🔄 File Operations
+
+| Action | Designs | Documents | Images | Folders |
+|--------|---------|-----------|--------|---------|
+| **Create** | ✅ New Design | ✅ Upload | ✅ Upload | ✅ New Folder |
+| **Rename** | ✅ | ✅ | ✅ | ✅ |
+| **Move** | ✅ | ✅ | ✅ | ✅ |
+| **Copy** | ✅ | ✅ | ✅ | ❌ |
+| **Delete** | ✅ | ✅ | ✅ | ✅ (if empty) |
+| **Share** | ✅ | ✅ | ✅ | ✅ (inherits) |
+| **Version History** | ✅ Full | ✅ Basic | ❌ | ❌ |
+| **Export** | ✅ Multiple formats | ✅ Download | ✅ Download | ❌ |
+
+---
+
+### 💡 Project Organization Tips
+
+1. **Plan your structure first** - Create folders before adding designs to avoid reorganizing later
+2. **Use consistent naming** - Adopt a naming convention (e.g., `PartName_v01_YYYYMMDD`)
+3. **Leverage subfolders** - Don't put everything at the root level; organize logically
+4. **Keep related files together** - Store reference images and documents near the designs they support
+5. **Use descriptive folder names** - Clear names save time when searching
+6. **Archive old versions** - Move outdated designs to an "Archive" folder instead of deleting
+7. **Regular cleanup** - Periodically review and organize your project structure
+
+### ⚠️ Important Notes
+
+- **Cloud-based storage**: All projects are stored in Autodesk's cloud (Fusion Team)
+- **Offline access**: Only editable designs can be cached for offline use
+- **Storage limits**: Free accounts have limited cloud storage
+- **Sharing inheritance**: Folder permissions cascade to contained items
+- **Cross-project references**: You can insert designs from other projects as linked references
 
